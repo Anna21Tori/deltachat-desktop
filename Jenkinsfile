@@ -8,14 +8,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh 'npm run install'
-		sh 'npm run build'
+		sh 'npm install'
+		sh 'npm build'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-		sh 'npm run test'
+		sh 'npm test'
             }
         }
         stage('Deploy') {
