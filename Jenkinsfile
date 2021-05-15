@@ -18,7 +18,7 @@ pipeline {
               	expression {currentBuild.result == null || currentBuild.result == 'SUCCESS'}
             }
             steps {
-                echo 'Testing....'
+                echo 'Testing.....'
 		sh 'npm test'
             }
         }
