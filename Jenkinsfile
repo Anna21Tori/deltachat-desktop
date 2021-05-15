@@ -22,9 +22,6 @@ pipeline {
             }
         }
         stage('Deploy') {
-	       agent {
-	        docker { image 'node:14-alpine' }
-              }
             steps {
                 echo 'Deploying......'
 		sh 'docker build -t delta-chat -f Dockerfile-deploy .'
