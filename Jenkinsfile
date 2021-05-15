@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
 	       agent {
-	        docker { image 'docker:dind' } 
+	        docker { image 'node:14-alpine' }
               }
             steps {
                 echo 'Deploying......'
