@@ -1,9 +1,10 @@
 pipeline {
     agent {
         docker { image 'node:latest' }
+    }
+    agent {
 	docker { image 'docker:dind' } 
     }
-    
 	
     stages {
         stage('Build') {
