@@ -2,9 +2,6 @@ pipeline {
     agent {
         docker { image 'node:latest' }
     }
-    agent {
-	docker { image 'docker:dind' } 
-    }
 	
     stages {
         stage('Build') {
@@ -25,6 +22,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+	       agent {
+	        docker { image 'docker:dind' } 
+              }
             steps {
                 echo 'Deploying......'
 		sh 'docker build -t delta-chat -f Dockerfile-deploy .'
