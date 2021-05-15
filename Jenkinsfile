@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying......'
-		sh 'docker build -t delta-chat .'
+		sh 'docker build -t delta-chat -f Dockerfile-deploy .'
             }
         }
     }
